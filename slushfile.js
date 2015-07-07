@@ -1,5 +1,6 @@
 var gulp = require('gulp'); // the gulp running the tasks with gulp
 var inquirer = require('inquirer'); // ask the question
+var template = require('gulp-template');
 
 gulp.task('default', function(done) { // build the package
 
@@ -8,8 +9,8 @@ gulp.task('default', function(done) { // build the package
     {type: 'input', name: 'name', message: 'What do you want to name your app?', default: getNameProposal()}
   ],
   function(answers) { // get the answers
-    console.log(answers);
     gulp.src(__dirname + '/templates/app/**')
+    .pipe(template(answers))
     .pipe(gulp.dest('./'));
   });
 });
