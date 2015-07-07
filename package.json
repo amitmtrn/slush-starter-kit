@@ -9,7 +9,9 @@
   "author": "Amit Choukroune",
   "license": "MIT",
   "dependencies": {
-    "gulp": "^3.9.0"
+    "gulp": "^3.9.0",
+    "inquirer": "^0.8.5",
+    "path": "^0.11.14"
   },
   "preferGlobal": "true"
 }
